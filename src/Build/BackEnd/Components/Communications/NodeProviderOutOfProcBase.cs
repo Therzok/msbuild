@@ -487,7 +487,7 @@ namespace Microsoft.Build.BackEnd
 
             CommunicationsUtilities.Trace("Launching node from {0}", msbuildLocation);
 
-#if RUNTIME_TYPE_NETCORE
+#if RUNTIME_TYPE_NETCORE || MONO
             // Run the child process with the same host as the currently-running process.
             string pathToHost;
             using (Process currentProcess = Process.GetCurrentProcess()) pathToHost = currentProcess.MainModule.FileName;
